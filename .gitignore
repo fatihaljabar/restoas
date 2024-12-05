@@ -2,6 +2,7 @@
 .vscode
 .env
 .test.env
+Submission 3.zip
  
 node_modules
 package-lock.json
