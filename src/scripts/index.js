@@ -8,18 +8,18 @@ import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const app = new App({
-    button: document.querySelector('nav .hamburgerMenu'),
-    drawer: document.querySelector('nav .menu'),
-    content: document.getElementById('mainContent'),
-    skipLink: document.querySelector('skip-link')
+  button: document.querySelector('nav .hamburgerMenu'),
+  drawer: document.querySelector('nav .menu'),
+  content: document.getElementById('mainContent'),
+  skipLink: document.querySelector('skip-link')
 
 });
 
 window.addEventListener('hashchange', () => {
-    app.renderPage();
+  app.renderPage();
 });
 
 window.addEventListener('load', () => {
-    app.renderPage();
-    swRegister();
+  app.renderPage();
+  swRegister();
 });

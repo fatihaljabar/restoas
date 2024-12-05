@@ -1,8 +1,8 @@
-import Swal from "sweetalert2";
-import CONFIG from "../global/config";
-import customValidationHeadingHandler from "./form-custom-validation";
-import { createListReview } from "../views/templates/template-creator";
-import RestaurantSource from "../data/restaurant-source";
+import Swal from 'sweetalert2';
+import CONFIG from '../global/config';
+import customValidationHeadingHandler from './form-custom-validation';
+import { createListReview } from '../views/templates/template-creator';
+import RestaurantSource from '../data/restaurant-source';
 
 const AddReviewInitiator = {
   async init({
@@ -30,24 +30,24 @@ const AddReviewInitiator = {
   },
 
   showReviewForm: (btnShowReviewForm, container) => {
-    btnShowReviewForm.addEventListener("click", () => {
-      container.style.display = "flex";
+    btnShowReviewForm.addEventListener('click', () => {
+      container.style.display = 'flex';
     });
   },
 
   closeReviewForm: (btnClose, container) => {
-    btnClose.addEventListener("click", () => {
-      container.style.display = "none";
+    btnClose.addEventListener('click', () => {
+      container.style.display = 'none';
     });
   },
 
   addValidation: (inputName, inputContent) => {
-    inputName.addEventListener("input", (event) => {
+    inputName.addEventListener('input', (event) => {
       customValidationHeadingHandler(event);
       const isValid = event.target.validity.valid;
       const errorMessage = event.target.validationMessage;
       const connectedValidationId =
-        event.target.getAttribute("aria-describedby");
+        event.target.getAttribute('aria-describedby');
       const connectedValidationEl = connectedValidationId
         ? document.getElementById(connectedValidationId)
         : null;
@@ -55,22 +55,22 @@ const AddReviewInitiator = {
       if (connectedValidationEl && errorMessage && !isValid) {
         connectedValidationEl.innerText = errorMessage;
       } else {
-        connectedValidationEl.innerText = "";
+        connectedValidationEl.innerText = '';
       }
     });
 
-    inputName.addEventListener("blur", (event) => {
+    inputName.addEventListener('blur', (event) => {
       customValidationHeadingHandler(event);
     });
-    inputName.addEventListener("invalid", customValidationHeadingHandler);
+    inputName.addEventListener('invalid', customValidationHeadingHandler);
 
-    inputContent.addEventListener("input", (event) => {
+    inputContent.addEventListener('input', (event) => {
       customValidationHeadingHandler(event);
 
       const isValid = event.target.validity.valid;
       const errorMessage = event.target.validationMessage;
       const connectedValidationId =
-        event.target.getAttribute("aria-describedby");
+        event.target.getAttribute('aria-describedby');
       const connectedValidationEl = connectedValidationId
         ? document.getElementById(connectedValidationId)
         : null;
@@ -78,15 +78,15 @@ const AddReviewInitiator = {
       if (connectedValidationEl && errorMessage && !isValid) {
         connectedValidationEl.innerText = errorMessage;
       } else {
-        connectedValidationEl.innerText = "";
+        connectedValidationEl.innerText = '';
       }
     });
 
-    inputContent.addEventListener("blur", (event) => {
+    inputContent.addEventListener('blur', (event) => {
       customValidationHeadingHandler(event);
     });
 
-    inputContent.addEventListener("invalid", customValidationHeadingHandler);
+    inputContent.addEventListener('invalid', customValidationHeadingHandler);
   },
 
   sendReview: (
@@ -97,26 +97,26 @@ const AddReviewInitiator = {
     restaurant,
     containerListReview
   ) => {
-    btnSave.addEventListener("click", async (e) => {
+    btnSave.addEventListener('click', async (e) => {
       e.preventDefault();
 
       Swal.fire({
-        title: "Submitting your review...",
-        text: "Please wait.",
+        title: 'Submitting your review...',
+        text: 'Please wait.',
         allowOutsideClick: false,
         didOpen: () => {
           Swal.showLoading();
         },
-        background: "#ca4b3a",
-        color: "#fff7eb",
+        background: '#ca4b3a',
+        color: '#fff7eb',
       });
 
       setTimeout(async () => {
         try {
           await fetch(`${CONFIG.BASE_URL}/review`, {
-            method: "POST",
+            method: 'POST',
             headers: {
-              "Content-Type": "application/json",
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({
               id: restaurant.id,
@@ -125,26 +125,26 @@ const AddReviewInitiator = {
             }),
           });
           Swal.fire({
-            icon: "success",
-            title: "Success!",
-            text: "Your review has been submitted.",
-            background: "#ca4b3a",
-            color: "#fff7eb",
+            icon: 'success',
+            title: 'Success!',
+            text: 'Your review has been submitted.',
+            background: '#ca4b3a',
+            color: '#fff7eb',
           });
         } catch (error) {
           Swal.fire({
-            icon: "error",
-            title: "Error",
+            icon: 'error',
+            title: 'Error',
             text: error.message,
-            background: "#ca4b3a",
-            color: "#fff7eb",
+            background: '#ca4b3a',
+            color: '#fff7eb',
           });
         }
 
-        inputName.value = "";
-        inputContent.value = "";
-        container.style.display = "none";
-        let html = "";
+        inputName.value = '';
+        inputContent.value = '';
+        container.style.display = 'none';
+        let html = '';
         const fetchRestaurant = await RestaurantSource.detailRestaurants(
           restaurant.id
         );

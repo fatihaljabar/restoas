@@ -1,21 +1,21 @@
-import CONFIG from "../../global/config";
+import CONFIG from '../../global/config';
 
 const createRestaurantItemTemplate = (restaurant) => {
   return `
         <div class="card justifyContent">
             <section class="cardImg">
                 <div class="labelCity">${restaurant.city}</div>
-                <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name || "-"}" crossorigin="anonymous">
+                <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name || '-'}" crossorigin="anonymous">
             </section>
             <section class="cardDescription">
                 <p class="rating">Rating ${restaurant.rating}</p>
-                <h1 class="restaurant__name">${restaurant.name || "-"}</h1>
+                <h1 class="restaurant__name">${restaurant.name || '-'}</h1>
                 <p class="desc">${
-                  restaurant.description
-                    ? restaurant.description.toString().substring(0, 100) +
-                      "..."
-                    : "-"
-                }</p>
+  restaurant.description
+    ? `${restaurant.description.toString().substring(0, 100)
+    }...`
+    : '-'
+}</p>
             </section>
             <section class="cardBtn">
             <a href="#/detail/${restaurant.id}" class="details-link">Details</a>
@@ -40,10 +40,10 @@ const createRestaurantDetailTemplate = (restaurant) => {
                 <p><strong>Rating : </strong> <span id="detailsRating">${restaurant.rating}</span></p>
                 <p>
                     <strong>Catagories : </strong> ${restaurant.categories
-                      .map((category) => {
-                        return `<span id="detailsCatagories">${category.name}</span>`;
-                      })
-                      .join("")}
+    .map((category) => {
+      return `<span id="detailsCatagories">${category.name}</span>`;
+    })
+    .join('')}
                 </p>
                 <p>
                     <strong>Description : </strong>
@@ -56,20 +56,20 @@ const createRestaurantDetailTemplate = (restaurant) => {
                     <p><strong>Makanan :</strong></p>
                     <div class="allVariantMenuMakanan">
                     ${restaurant.menus.foods
-                      .map(({ name }) => {
-                        return `<div class="variantMenuMakanan"><p>${name}</p></div>`;
-                      })
-                      .join("")}
+    .map(({ name }) => {
+      return `<div class="variantMenuMakanan"><p>${name}</p></div>`;
+    })
+    .join('')}
                     </div>
                 </div>
                 <div class="menuMinuman">
                     <p><strong>Minuman :</strong></p>
                     <div class="allVariantMenuMinuman">
                     ${restaurant.menus.drinks
-                      .map(({ name }) => {
-                        return `<div class="variantMenuMinuman"><p>${name}</p></div>`;
-                      })
-                      .join("")}
+    .map(({ name }) => {
+      return `<div class="variantMenuMinuman"><p>${name}</p></div>`;
+    })
+    .join('')}
                     </div>
                 </div>
             </section>
@@ -82,10 +82,10 @@ const createRestaurantDetailTemplate = (restaurant) => {
                 
                 <div class="userReviewDetailsContent">
                     ${restaurant.customerReviews
-                      .map(({ name, review, date }) => {
-                        return createListReview(name, review, date);
-                      })
-                      .join("")}
+    .map(({ name, review, date }) => {
+      return createListReview(name, review, date);
+    })
+    .join('')}
                 </div>
             </section>
         </div>`;
