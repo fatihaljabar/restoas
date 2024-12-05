@@ -11,12 +11,6 @@
     text-decoration: none;
 }
 
-@font-face {
-    font-family: "Dela Gothic One";
-    src: url('path-to-font.woff2') format('woff2');
-    font-display: swap;
-}
-
 body {
     width: 100%;
     background: var(--primary);
