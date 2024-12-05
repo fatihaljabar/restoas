@@ -23,3 +23,9 @@ jobs:
         run: |
           npm install
           npm run test
+        env:
+          CI: true
+          KEY: ${{ secrets.KEY }} 
+          DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+          DATABASE_VERSION: ${{ secrets.DATABASE_VERSION }} 
+          OBJECT_STORE_NAME: ${{ secrets.OBJECT_STORE_NAME }}
