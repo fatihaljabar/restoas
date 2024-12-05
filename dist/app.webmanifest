@@ -1,0 +1,54 @@
+{
+  "id": "restaurant-catalogue-pwa",
+  "start_url": "./index.html",
+  "name": "Restaurant Catalogue PWA",
+  "short_name": "Restaurant Catalogue",
+  "description": "Free Catalogue Restaurant for you",
+  "display": "standalone",
+  "background_color": "#fff7eb",
+  "theme_color": "#ca4b3a",
+  "icons": [
+    {
+      "src": "/icons/icon-72-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-96-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-128-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-144-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-152-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

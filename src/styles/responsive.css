@@ -1,0 +1,136 @@
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .hamburgerMenu {
+    display: none;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    transform: translateX(0);
+    position: relative;
+    padding: 0px;
+  }
+  .menu a {
+    padding-inline: 22px;
+  }
+  .menu a span {
+    font-size: 12px;
+  }
+  .cardContent {
+    grid-template-columns: 300px 300px;
+    gap: 30px;
+  }
+  .details-content {
+    padding: 20px;
+  }
+  .details-content img {
+    max-height: 300px;
+  }
+  .descDetailsContent {
+    font-size: 16px;
+  }
+  .variantMenuMakanan,
+  .variantMenuMinuman {
+    width: 45%;
+  }
+  .popupContent {
+    width: 80%;
+  }
+  footer span {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  body {
+    height: 100vh;
+  }
+  .hamburgerMenu {
+    display: none;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    transform: translateX(0);
+    position: relative;
+    padding: 0px;
+  }
+  .menu a {
+    padding-inline: 22px;
+  }
+  .menu a span {
+    font-size: 12px;
+  }
+  .cardContent {
+    grid-template-columns: 300px 300px 300px;
+    gap: 20px 30px;
+  }
+  .details-content {
+    padding: 30px;
+  }
+  .details-content img {
+    max-height: 400px;
+  }
+  .descDetailsContent p {
+    font-size: 18px;
+  }
+  .variantMenuMakanan,
+  .variantMenuMinuman {
+    width: 200px;
+  }
+  .popupContent {
+    width: 60%;
+  }
+  .favorite-content {
+    padding: 20px;
+  }
+  footer span {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hamburgerMenu {
+    display: none;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+    transform: translateX(0);
+    position: relative;
+    padding: 0px;
+  }
+  .menu a {
+    padding-inline: 22px;
+  }
+  .menu a span {
+    font-size: 12px;
+  }
+  .cardContent {
+    grid-template-columns: 325px 325px 325px 325px;
+    gap: 30px 30px;
+  }
+  .details-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .details-content img {
+    height: 400px;
+  }
+  .descDetailsContent p {
+    font-size: 15px;
+  }
+  .descDetailsContent strong {
+    font-size: 18px;
+  }
+  .popupContent {
+    width: 50%;
+  }
+  .favorite-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+  footer span {
+    font-size: 12px;
+  }
+}
